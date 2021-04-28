@@ -16,25 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-AM-7LL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-AM-7LL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="100" id="eof-aH-6rk" customClass="ArticleTableViewCell" customModule="TechCrunch_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="150" id="eof-aH-6rk" customClass="ArticleTableViewCell" customModule="TechCrunch_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eof-aH-6rk" id="BC6-ej-uk0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-PI-cbp">
-                                                    <rect key="frame" x="30" y="31" width="240" height="38"/>
+                                                    <rect key="frame" x="30" y="31" width="240" height="88"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dJs-fG-9DQ">
-                                                    <rect key="frame" x="290" y="0.0" width="124" height="100"/>
+                                                    <rect key="frame" x="290" y="0.0" width="124" height="150"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -53,6 +53,7 @@
                                         <connections>
                                             <outlet property="articleImageView" destination="dJs-fG-9DQ" id="4QU-zy-1NF"/>
                                             <outlet property="headlineLabel" destination="S7S-PI-cbp" id="bNm-2P-MZd"/>
+                                            <segue destination="iC3-p9-77h" kind="show" id="d1x-An-6yr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -85,24 +86,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-dZ-CAa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-0G-vLL">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="45z-22-9Hy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="TVx-dZ-CAa" secondAttribute="bottom" id="9KE-eL-F0V"/>
                             <constraint firstItem="TVx-dZ-CAa" firstAttribute="leading" secondItem="4V3-nM-nPo" secondAttribute="leading" id="Jrz-pm-hYt"/>
+                            <constraint firstItem="yDD-0G-vLL" firstAttribute="centerY" secondItem="4V3-nM-nPo" secondAttribute="centerY" id="PN1-oJ-svB"/>
+                            <constraint firstItem="yDD-0G-vLL" firstAttribute="centerX" secondItem="4V3-nM-nPo" secondAttribute="centerX" id="bjw-ew-OzC"/>
                             <constraint firstItem="TVx-dZ-CAa" firstAttribute="top" secondItem="45z-22-9Hy" secondAttribute="top" id="eM1-KP-dfN"/>
                             <constraint firstAttribute="trailing" secondItem="TVx-dZ-CAa" secondAttribute="trailing" id="h3d-Dc-2LQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FcA-97-TI1"/>
                     <connections>
+                        <outlet property="spinner" destination="yDD-0G-vLL" id="62e-RP-jdn"/>
                         <outlet property="webView" destination="TVx-dZ-CAa" id="8kn-Cz-xcm"/>
                     </connections>
                 </viewController>

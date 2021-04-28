@@ -14,15 +14,25 @@ class ArticleTableViewCell: UITableViewCell {
     
     var articleToDisplay:Article?
     
+    
     func displayArticle(_ article:Article) {
         
         articleImageView.image = nil
         headlineLabel.text = ""
         
+        headlineLabel.alpha = 0
+        articleImageView.alpha = 0
+        
         articleToDisplay = article
         
         // set the headline
         headlineLabel.text = articleToDisplay!.title! + "..."
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            
+            self.headlineLabel.alpha = 1
+            
+        }, completion: nil)
         
         // download and display the image
         let urlString = articleToDisplay!.urlToImage!
@@ -30,7 +40,14 @@ class ArticleTableViewCell: UITableViewCell {
         // check cache to see if image is already downloaded and saved
         if let imageData = CacheManager.retrieveImage(urlString) {
             
-            articleImageView.image = UIImage(data: imageData)
+            self.articleImageView.image = UIImage(data: imageData)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                
+                self.articleImageView.alpha = 1
+                
+            }, completion: nil)
+            
             return
             
         }
@@ -61,6 +78,12 @@ class ArticleTableViewCell: UITableViewCell {
                         
                         // set image data
                         self.articleImageView.image = UIImage(data: data!)
+                        
+                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                            
+                            self.articleImageView.alpha = 1
+                            
+                        }, completion: nil)
                         
                     }
                     
