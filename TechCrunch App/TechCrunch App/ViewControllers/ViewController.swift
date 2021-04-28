@@ -39,7 +39,10 @@ extension ViewController: ArticlesModelProtocol {
     
     func articlesRetrieved(_ articles: [Article]) {
         
+        // var articles at the top is the same as the articles being passed into this func
         self.articles = articles
+        
+        tableView.reloadData()
         
     }
     
@@ -58,9 +61,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ARTICLE_CELL, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ARTICLE_CELL, for: indexPath) as! ArticleTableViewCell
         
         // TODO: configure cell
+        let article = articles[indexPath.row]
+        
+        cell.displayArticle(article)
         
         return cell
         
