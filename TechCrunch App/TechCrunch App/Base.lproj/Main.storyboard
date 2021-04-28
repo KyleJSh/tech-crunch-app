@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-AM-7LL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-AM-7LL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-PI-cbp">
-                                                    <rect key="frame" x="40" y="31" width="250" height="38"/>
+                                                    <rect key="frame" x="30" y="31" width="240" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="dJs-fG-9DQ" secondAttribute="bottom" id="AAG-ih-ZCV"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="S7S-PI-cbp" secondAttribute="bottom" constant="20" id="AaK-rb-A7z"/>
-                                                <constraint firstItem="S7S-PI-cbp" firstAttribute="leading" secondItem="BC6-ej-uk0" secondAttribute="leadingMargin" constant="20" id="N7J-lb-Pt2"/>
+                                                <constraint firstItem="S7S-PI-cbp" firstAttribute="leading" secondItem="BC6-ej-uk0" secondAttribute="leadingMargin" constant="10" id="N7J-lb-Pt2"/>
                                                 <constraint firstItem="dJs-fG-9DQ" firstAttribute="top" secondItem="BC6-ej-uk0" secondAttribute="top" id="Wwi-WB-IJO"/>
                                                 <constraint firstItem="S7S-PI-cbp" firstAttribute="top" secondItem="BC6-ej-uk0" secondAttribute="topMargin" constant="20" id="bOJ-Qo-Keq"/>
                                                 <constraint firstAttribute="trailing" secondItem="dJs-fG-9DQ" secondAttribute="trailing" id="fdV-Jv-A9U"/>
@@ -48,7 +48,7 @@
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="dJs-fG-9DQ" firstAttribute="width" secondItem="eof-aH-6rk" secondAttribute="width" multiplier="0.3" id="XQ3-W0-XVH"/>
-                                            <constraint firstItem="S7S-PI-cbp" firstAttribute="width" secondItem="eof-aH-6rk" secondAttribute="width" multiplier="0.7" constant="-40" id="Zzz-yN-eIL"/>
+                                            <constraint firstItem="S7S-PI-cbp" firstAttribute="width" secondItem="eof-aH-6rk" secondAttribute="width" multiplier="0.7" constant="-50" id="Zzz-yN-eIL"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="articleImageView" destination="dJs-fG-9DQ" id="4QU-zy-1NF"/>

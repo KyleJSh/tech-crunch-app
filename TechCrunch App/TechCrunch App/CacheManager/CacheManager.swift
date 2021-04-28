@@ -9,5 +9,17 @@ import Foundation
 
 class CacheManager {
     
+    static var dictionary = [String:Data]()
     
+   static func saveImage(_ url:String, _ imageData:Data) {
+        
+        dictionary[url] = imageData
+        
+    }
+    
+    static func retrieveImage(_ url:String) -> Data? {
+        
+        return dictionary[url]
+        
+    }
 }
